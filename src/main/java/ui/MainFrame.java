@@ -14,7 +14,7 @@ public class MainFrame extends JFrame {
 
         JTabbedPane tabbedPane = new JTabbedPane();
 
-        tabbedPane.addTab("F1 - Tồn đầu", new F1OpeningPanel());
+        tabbedPane.addTab("F1 - Tồn đầu Ngày", new F1OpeningPanel());
         tabbedPane.addTab("F2 - Nhập hàng", new F2ReceivedPanel());
         tabbedPane.addTab("F3 - Bán hàng", new F3OrdersPanel());
         tabbedPane.addTab("F4 - Tồn cuối", new F4ClosingPanel());
