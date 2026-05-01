@@ -8,7 +8,7 @@ public class F2ReceivedPanel extends JPanel {
     public F2ReceivedPanel() {
         setLayout(new BorderLayout());
 
-        JLabel label = new JLabel("F1 - Tồn đầu", SwingConstants.CENTER);
+        JLabel label = new JLabel("F2 ", SwingConstants.CENTER);
         add(label, BorderLayout.CENTER);
     }
 }

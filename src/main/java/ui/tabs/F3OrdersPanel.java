@@ -8,7 +8,7 @@ public class F3OrdersPanel extends JPanel {
     public F3OrdersPanel() {
         setLayout(new BorderLayout());
 
-        JLabel label = new JLabel("F1 - Tồn đầu", SwingConstants.CENTER);
+        JLabel label = new JLabel("F3", SwingConstants.CENTER);
         add(label, BorderLayout.CENTER);
     }
 }

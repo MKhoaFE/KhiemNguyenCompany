@@ -8,7 +8,7 @@ public class F6PricePanel extends JPanel {
     public F6PricePanel() {
         setLayout(new BorderLayout());
 
-        JLabel label = new JLabel("F1 - Tồn đầu", SwingConstants.CENTER);
+        JLabel label = new JLabel("F6", SwingConstants.CENTER);
         add(label, BorderLayout.CENTER);
     }
 }

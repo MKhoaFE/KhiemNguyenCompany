@@ -8,7 +8,7 @@ public class F5ReportsPanel extends JPanel {
     public F5ReportsPanel() {
         setLayout(new BorderLayout());
 
-        JLabel label = new JLabel("F1 - Tồn đầu", SwingConstants.CENTER);
+        JLabel label = new JLabel("F5", SwingConstants.CENTER);
         add(label, BorderLayout.CENTER);
     }
 }
