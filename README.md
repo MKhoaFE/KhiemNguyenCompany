@@ -1,58 +1,55 @@
-📦 Card Dealer Management (Desktop) – v2.0
+📦 CARD DEALER MANAGEMENT (DESKTOP) – v2.0
 
-Desktop application (Java Swing) for managing prepaid cards and coffee sales at a retail counter. Runs fully offline, uses SQLite for storage, and can be packaged into a simple .exe for daily use.
-
-📍 Location: 66 Ly Nam De
-🗓 Updated: May 1, 2026
-🏢 Organization: KhiemNguyenCompany
+Organization: KhiemNguyenCompany
+Location: 66 Ly Nam De
+Updated: May 1, 2026
 
 ⚙️ 1. REQUIREMENTS
 
-To run this project, you need the following tools installed:
+To run this application, make sure the following tools are available:
 
-Java Development Kit (JDK 17 or higher)
-IntelliJ IDEA (recommended IDE)
-SQLite (lightweight database engine)
-DB Browser for SQLite (for viewing/editing database)
-Apache Maven (for dependency management & build)
+✔️ Java Development Kit (JDK 17 or higher)
+✔️ IntelliJ IDEA (recommended IDE)
+✔️ SQLite (local database)
+✔️ DB Browser for SQLite (database viewer/editor)
+✔️ Apache Maven (build & dependency management)
 
-Optional (for packaging):
+Optional:
 
-Launch4j (convert .jar → .exe)
-🚀 2. OVERVIEW
+➕ Launch4j (to package .jar → .exe)
+🚀 2. APPLICATION OVERVIEW
 
-This application helps manage daily operations at a small retail shop:
+This is a desktop application (Java Swing) designed for small retail operations.
 
-Opening inventory
-Goods receiving
-Sales orders
-Invoice printing (A5)
-Closing inventory
-Revenue reports
-Price list management
+🔹 Main capabilities:
+• Manage opening inventory
+• Record incoming goods
+• Create sales orders
+• Print invoices (A5 format)
+• Track closing inventory
+• Generate revenue reports
+• Maintain price list
+🔹 Key characteristics:
+✅ 100% Offline
+✅ No server required
+✅ No internet required
+✅ Data stored locally (.db file)
+🧱 3. SYSTEM ARCHITECTURE
 
-👉 No internet required
-👉 No server required
-👉 Data stored locally in a .db file
-
-🧱 3. ARCHITECTURE
-
-Simple layered architecture:
+The project follows a simple layered structure:
 
 UI (Swing)
-  ↓
+   ↓
 Service (Business Logic)
-  ↓
+   ↓
 DAO (JDBC)
-  ↓
-SQLite Database (.db file)
+   ↓
+SQLite Database
 🖥 4. USER INTERFACE
-Built with Java Swing
-Main window (JFrame)
-Navigation via JTabbedPane
-
-Tabs:
-
+🔹 Structure:
+Main window: JFrame
+Navigation: JTabbedPane
+🔹 Tabs:
 F1 – Opening Inventory
 F2 – Goods Received
 F3 – Sales Orders
@@ -68,19 +65,19 @@ F4	Closing Inventory
 F5	Reports
 F6	Price List
 🗄 6. DATABASE
-Type: SQLite
-File: database/data.db
-Runs locally with the application
-
-Main tables:
-
+🔹 Type:
+SQLite (embedded database)
+🔹 File location:
+database/data.db
+🔹 Main tables:
 card_types
 inventory_entries
 orders
 order_items
-
-👉 Database can be opened and managed using DB Browser for SQLite
-
+🔹 Notes:
+✔️ Runs locally with the app
+✔️ Can be opened using DB Browser for SQLite
+✔️ No database server needed
 📂 7. PROJECT STRUCTURE
 project/
 ├── src/
@@ -92,27 +89,37 @@ project/
 ├── database/
 │   └── data.db
 └── pom.xml
-📦 8. BUILD & RUN
-Build using Maven
+📦 8. BUILD & DEPLOY
+🔹 Build:
+Use Maven to package the project
 Output: .jar file
-Can be wrapped into .exe using Launch4j
+🔹 Deployment:
+Optionally convert .jar → .exe using Launch4j
+🔹 Example release structure:
+release/
+├── app.exe
+├── app.jar
+├── database/
+│   └── data.db
+└── jre/ (optional)
 💾 9. DATA STORAGE
-Stored locally in data.db
-No cloud, no remote server
-Backup = copy the .db file
+📁 Stored locally in data.db
+🔄 Backup: copy the .db file
+🌐 No cloud / remote connection
 ✅ 10. ADVANTAGES
-Fully offline
-Lightweight & fast
-Easy deployment (just .exe)
-No infrastructure required
-Suitable for small retail shops
+✔️ Fully offline operation
+✔️ Lightweight and fast
+✔️ Easy deployment (single .exe)
+✔️ No infrastructure required
+✔️ Suitable for small retail environments
 🔮 11. FUTURE IMPROVEMENTS
-Auto database backup
-LAN multi-user support
-Excel export
-Dark mode
-Thermal printer support
-📌 NOTES
-Application requires SQLite database file to exist
-Dependencies managed via Maven
-Designed for Windows desktop usage
+• Automatic database backup
+• Multi-user (LAN support)
+• Excel export
+• Dark mode UI
+• Thermal printer integration
+📌 12. NOTES
+• Requires existing SQLite database file
+• Built with Java 17+
+• Dependencies managed via Maven
+• Designed for Windows desktop usage
