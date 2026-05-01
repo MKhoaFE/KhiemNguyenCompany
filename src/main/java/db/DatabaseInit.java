@@ -1,5 +1,7 @@
 package db;
 
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.sql.Connection;
 import java.sql.Statement;
 
@@ -9,18 +11,21 @@ public class DatabaseInit {
         try (Connection conn = DBConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 
-            stmt.execute("""
-                CREATE TABLE IF NOT EXISTS card_types (
-                   id INTEGER PRIMARY KEY AUTOINCREMENT,
-                   name TEXT,
-                   denomination INTEGER,
-                   default_price REAL,
-                   default_discount REAL,
-                   created_at TEXT
-                );
-            """);
+            String sql = new String(Files.readAllBytes(Paths.get("C:/Users/Admin/IdeaProjects/KhiemNguyenCompany/database/init.sql")));
 
-            System.out.println("DB Initialized");
+            // Tách từng câu lệnh bằng dấu ;
+            String[] queries = sql.split(";");
+
+            for (String query : queries) {
+                query = query.trim();
+
+                // Bỏ qua dòng rỗng hoặc comment
+                if (query.isEmpty() || query.startsWith("--")) continue;
+
+                stmt.execute(query);
+            }
+
+            System.out.println("DB INIT DONE");
 
         } catch (Exception e) {
             e.printStackTrace();
