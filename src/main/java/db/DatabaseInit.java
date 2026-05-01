@@ -11,21 +11,14 @@ public class DatabaseInit {
         try (Connection conn = DBConnection.getConnection();
              Statement stmt = conn.createStatement()) {
 
-            String sql = new String(Files.readAllBytes(Paths.get("C:/Users/Admin/IdeaProjects/KhiemNguyenCompany/database/init.sql")));
+            System.out.println("INIT DB...");
 
-            // Tách từng câu lệnh bằng dấu ;
-            String[] queries = sql.split(";");
+            String sql = new String(Files.readAllBytes(Paths.get("database/init.sql")));
 
-            for (String query : queries) {
-                query = query.trim();
+            // 🔥 EXECUTE TOÀN BỘ FILE (QUAN TRỌNG)
+            stmt.executeUpdate(sql);
 
-                // Bỏ qua dòng rỗng hoặc comment
-                if (query.isEmpty() || query.startsWith("--")) continue;
-
-                stmt.execute(query);
-            }
-
-            System.out.println("DB INIT DONE");
+            System.out.println("✅ DB INIT DONE");
 
         } catch (Exception e) {
             e.printStackTrace();
