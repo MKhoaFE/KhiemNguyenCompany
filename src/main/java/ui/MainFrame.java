@@ -9,15 +9,18 @@ public class MainFrame extends JFrame {
 
     public MainFrame() {
         setTitle("Quản Lý Card Đại Lý");
-        setSize(1000, 600);
+
+        // 🔥 FULLSCREEN
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setUndecorated(false); // true nếu muốn full không viền
+
         setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setLocationRelativeTo(null);
 
         JTabbedPane tabs = new JTabbedPane();
 
         tabs.add("F1 - Tồn đầu", new F1OpeningPanel());
-        tabs.add("F2 - Nhập", new F2ReceivedPanel());
-        tabs.add("F3 - Bán", new F3OrdersPanel());
+        tabs.add("F2 - Nhập hàng", new F2ReceivedPanel());
+        tabs.add("F3 - Bán hàng", new F3OrdersPanel());
         tabs.add("F4 - Tồn cuối", new F4ClosingPanel());
         tabs.add("F5 - Báo cáo", new F5ReportsPanel());
         tabs.add("F6 - Bảng giá", new F6PricePanel());

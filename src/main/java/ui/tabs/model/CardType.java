@@ -6,4 +6,8 @@ public class CardType {
     public int denomination;
     public int defaultPrice;
     public int defaultDiscount;
+    @Override
+    public String toString() {
+        return name;
+    }
 }
