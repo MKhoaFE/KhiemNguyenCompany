@@ -14,7 +14,6 @@ import java.sql.*;
 import java.text.NumberFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
 
@@ -332,9 +331,6 @@ public class F3OrdersPanel extends JPanel {
 
         card.add(tableArea, BorderLayout.CENTER);
 
-        // Add first empty row
-        addEmptyRow();
-
         return card;
     }
 
@@ -594,6 +590,7 @@ public class F3OrdersPanel extends JPanel {
     }
 
     private void refreshGrandTotal() {
+        if (lblGrandTotal == null) return;
         long total = 0;
         for (int i = 0; i < itemsModel.getRowCount(); i++) {
             total += toLong(itemsModel.getValueAt(i, 5));
@@ -930,8 +927,7 @@ public class F3OrdersPanel extends JPanel {
 
     /** Renders each bill in the sidebar list */
     private class BillCellRenderer extends JPanel implements ListCellRenderer<BillEntry> {
-        private final JLabel lblId, lblName, lblTotal, lblActions;
-        private JButton btnDelete, btnEdit, btnPrint;
+        private final JLabel lblId, lblName, lblTotal;
 
         BillCellRenderer() {
             setLayout(new BorderLayout(8, 2));

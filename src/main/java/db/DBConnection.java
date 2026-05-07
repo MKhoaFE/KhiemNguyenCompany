@@ -12,9 +12,6 @@ public class DBConnection {
         try {
             File dbFile = new File("database/data.db");
 
-            // 🔥 In ra path thật
-            System.out.println("DB PATH: " + dbFile.getAbsolutePath());
-
             return DriverManager.getConnection(URL);
 
         } catch (Exception e) {
