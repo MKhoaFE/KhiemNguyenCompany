@@ -1,8 +1,8 @@
 package ui.tabs;
 
 import db.DBConnection;
-import ui.tabs.model.CardType;
 import ui.tabs.dao.CardTypeDAO;
+import ui.tabs.model.CardType;
 
 import javax.swing.*;
 import javax.swing.border.*;
@@ -65,17 +65,17 @@ public class F6PricePanel extends JPanel {
     // Brand definition: [groupName, ...keywords in lowercase]
     private static final String[][] BRANDS = {
             {"Viettel",        "viettel"},
-            {"Mobifone",       "mobifone"},
-            {"Vinaphone",      "vinaphone"},
             {"Vietnammobile",  "vietnammobile", "vietnam mobile"},
+            {"Mobifone",       "mobifone", "mobi"},
+            {"Vinaphone",      "vinaphone", "vina"},
             {"Cà phê",         "arabica", "robusta", "cà phê", "cafe"},
     };
     private static final Color[] BRAND_COLORS = {
-            new Color(0xEE0033),
-            new Color(0xE30613),
-            new Color(0x0066CC),
-            new Color(0xFF6600),
-            new Color(0x5D4037),
+            new Color(0xEE0033),   // Viettel — đỏ
+            new Color(0xFF6600),   // Vietnammobile — cam
+            new Color(0xE30613),   // Mobifone — đỏ đậm
+            new Color(0x0066CC),   // Vinaphone — xanh
+            new Color(0x5D4037),   // Cà phê — nâu
     };
     private static final Set<String> EDITABLE_DENOM = new HashSet<>(Arrays.asList("arabica","robusta"));
 

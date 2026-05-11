@@ -18,6 +18,7 @@ public class MainFrame extends JFrame {
 
         JTabbedPane tabs = new JTabbedPane();
 
+        tabs.add("🏠 Trang chủ", new WelcomePanel());
         tabs.add("F1 - Tồn đầu", new F1OpeningPanel());
         tabs.add("F2 - Nhập hàng", new F2ReceivedPanel());
         tabs.add("F3 - Bán hàng", new F3OrdersPanel());
@@ -25,11 +26,22 @@ public class MainFrame extends JFrame {
         tabs.add("F5 - Báo cáo", new F5ReportsPanel());
         tabs.add("F6 - Bảng giá", new F6PricePanel());
 
+        tabs.setSelectedIndex(0); // Mở trang chủ mặc định
+
         add(tabs);
     }
 
     public static void main(String[] args) {
-        DatabaseInit.init();
+        System.out.println("Starting app...");
+
+        try {
+            DatabaseInit.init();
+            System.out.println("Database initialized.");
+        } catch (Exception e) {
+            e.printStackTrace();
+            JOptionPane.showMessageDialog(null, "Database init failed: " + e.getMessage());
+            return;
+        }
 
         SwingUtilities.invokeLater(() -> {
             new MainFrame().setVisible(true);
